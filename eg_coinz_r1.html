@@ -1,0 +1,136 @@
+<html>
+<head>
+<title>Everybody's Golf - Coins and Gems Locator</title>
+<style type="text/css">
+table { border-collapse:collapse; }
+body { font-family : "Meiryo UI"; }
+td { padding : 100px,100px,100px,100px ; border : solid 1px silver ; text-align : left ;}
+.header { text-align : center ;}
+.inout { width : 5em ;}
+.in, .out, #islandtime { text-align : center ;}
+td.icon { width : 44px; height : 56px ; background-repeat: no-repeat, no-repeat; }
+</style>
+<script type="text/javascript">
+function days_passed() {
+var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+var firstDateUTC = new Date(Date.UTC(2019,08,11));
+var secondDate = new Date();
+var diffDays = Math.floor(Math.abs((firstDateUTC.getTime() - secondDate.getTime())/(oneDay)));
+return diffDays;
+}
+function getEagleOutHoleNumber(){
+var daysPassed = days_passed();
+var remainder = daysPassed % 9;
+var EagleOutHoleNumber = 4 + remainder;
+return EagleOutHoleNumber;
+}
+function populateTable(){
+var EagleOutHoleNumber = Number(getEagleOutHoleNumber());
+var tdOut = document.getElementsByClassName("out");
+var tdIn = document.getElementsByClassName("in");
+for (var i = 0; i < tdOut.length; i++){
+var thisOutHoleNumber = (EagleOutHoleNumber + i*2) % 9;
+if (thisOutHoleNumber == 0){
+thisOutHoleNumber = 9;
+}
+var thisInHoleNumber = thisOutHoleNumber + 10;
+if (thisInHoleNumber > 18){
+thisInHoleNumber = thisInHoleNumber - 9;
+}
+tdOut[i].innerHTML = thisOutHoleNumber;
+tdIn[i].innerHTML = thisInHoleNumber;
+}
+var tdGolfIslandTime = document.getElementById("islandtime");
+tdGolfIslandTime.innerHTML = golfIslandTime();
+addIcons();
+}
+function golfIslandTime(){
+var golfIslandTime = new Date().toUTCString();
+return golfIslandTime;
+}
+function addIcons(){
+var tdIcon = document.getElementsByClassName("icon");
+for (var i = 0; i < tdIcon.length; i++){
+var bgURL = "url(" + "'icons/" + i + ".png')";
+tdIcon[i].style.backgroundImage = bgURL;
+}
+}
+</script>
+</head>
+<body onLoad="populateTable();setInterval('populateTable()', 1000 )">
+<table cellpadding="5" cellspacing="5">
+<tr class="header">
+<th class="header" colspan="4">GOLF ISLAND TIME:</td>
+</tr>
+<tr class="header">
+<td id="islandtime" colspan="4"></td>
+</tr>
+<tr class="header">
+<th class="header" rowspan="2" colspan="2">COURSE NAME</td>
+<th class="header" colspan="2">ITEMS</td>
+</tr>
+<tr class="header">
+<th class="header inout">OUT</td>
+<th class="header inout">IN</td>
+</tr>
+<tr>
+<td>Eagle City Golf Course</td>
+<td class="icon"></td>
+<td class="out"></td>
+<td class="in"></td>
+</tr>
+<tr>
+<td>Alpina Forest Golf Club</td>
+<td class="icon"></td>
+<td class="out"></td>
+<td class="in"></td>
+</tr>
+<tr>
+<td>Kanaloa Beach Golf Resort</td>
+<td class="icon"></td>
+<td class="out"></td>
+<td class="in"></td>
+</tr>
+<tr>
+<td>Vortex Valley Golf Course</td>
+<td class="icon"></td>
+<td class="out"></td>
+<td class="in"></td>
+</tr>
+<tr>
+<td>Imperial Garden</td>
+<td class="icon"></td>
+<td class="out"></td>
+<td class="in"></td>
+</tr>
+<tr>
+<td>Green Country Club</td>
+<td class="icon"></td>
+<td class="out"></td>
+<td class="in"></td>
+</tr>
+<tr>
+<td>Balata Country Club</td>
+<td class="icon"></td>
+<td class="out"></td>
+<td class="in"></td>
+</tr>
+<tr>
+<td>Nam Rong Bay Country Club</td>
+<td class="icon"></td>
+<td class="out"></td>
+<td class="in"></td>
+</tr>
+<tr>
+<td>Pine Hills Golf Club</td>
+<td class="icon"></td>
+<td class="out"></td>
+<td class="in"></td>
+</tr>
+<tr>
+<td>Akigase Country Club</td>
+<td class="icon"></td>
+<td class="out"></td>
+<td class="in"></td>
+</tr>
+</table>
