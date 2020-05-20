@@ -2,6 +2,7 @@
 <head>
 <title>Everybody's Golf - Coins and Gems Locator</title>
 <style type="text/css">
+/* html elements */
 table { border-collapse:collapse; }
 body { font-family : "Meiryo UI"; }
 td { padding : 100px,100px,100px,100px ; border : solid 1px silver ; text-align : left ;}
@@ -9,6 +10,34 @@ td { padding : 100px,100px,100px,100px ; border : solid 1px silver ; text-align 
 .inout { width : 5em ;}
 .in, .out, #islandtime { text-align : center ;}
 td.icon { width : 44px; height : 56px ; background-repeat: no-repeat, no-repeat; }
+
+/* tooltip */
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 500px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 </style>
 <script type="text/javascript">
 function days_passed() {
@@ -37,8 +66,10 @@ var thisInHoleNumber = thisOutHoleNumber + 10;
 if (thisInHoleNumber > 18){
 thisInHoleNumber = thisInHoleNumber - 9;
 }
-tdOut[i].innerHTML = thisOutHoleNumber;
-tdIn[i].innerHTML = thisInHoleNumber;
+tdOut[i].firstChild.firstChild.innerText = thisOutHoleNumber;
+tdIn[i].firstChild.firstChild.innerText = thisInHoleNumber;
+tdOut[i].firstChild.lastChild.innerHTML = getToolTipText(i,thisOutHoleNumber);
+tdIn[i].firstChild.lastChild.innerHTML = getToolTipText(i,thisInHoleNumber);
 }
 var tdGolfIslandTime = document.getElementById("islandtime");
 tdGolfIslandTime.innerHTML = golfIslandTime();
@@ -54,6 +85,203 @@ for (var i = 0; i < tdIcon.length; i++){
 var bgURL = "url(" + "'icons/" + i + ".png')";
 tdIcon[i].style.backgroundImage = bgURL;
 }
+}
+function getToolTipText(a,b){
+var thisCourseIndex = a;
+var thisHoleNumber = b;
+var Tips = [ 
+["Eagle",
+"HOLE1:",
+"HOLE2:",
+"HOLE3:",
+"HOLE4:",
+"HOLE5:",
+"HOLE6:",
+"HOLE7:",
+"HOLE8:",
+"HOLE9:",
+"HOLE10:Behind bleachers near green, rough separating fairway from next hole's, in particular the triangular open area near pond. Found one hidden next to camera tower.",
+"HOLE11:",
+"HOLE12:",
+"HOLE13:",
+"HOLE14:",
+"HOLE15:",
+"HOLE16:",
+"HOLE17:",
+"HOLE18:"],
+["Alpina",
+"HOLE1:",
+"HOLE2:",
+"HOLE3:",
+"HOLE4:",
+"HOLE5:",
+"HOLE6:",
+"HOLE7:",
+"HOLE8:",
+"HOLE9:",
+"HOLE10:Check around cottages",
+"HOLE11:Check back tees and lower area around raised green",
+"HOLE12:",
+"HOLE13:",
+"HOLE14:",
+"HOLE15:",
+"HOLE16:",
+"HOLE17:",
+"HOLE18:"],
+["Kanaloa",
+"HOLE1:",
+"HOLE2:",
+"HOLE3:",
+"HOLE4:",
+"HOLE5:",
+"HOLE6:",
+"HOLE7:",
+"HOLE8:",
+"HOLE9:",
+"HOLE10:",
+"HOLE11:",
+"HOLE12:",
+"HOLE13:",
+"HOLE14:",
+"HOLE15:",
+"HOLE16:",
+"HOLE17:",
+"HOLE18:"],
+["Vortex",
+"HOLE1:",
+"HOLE2:",
+"HOLE3:",
+"HOLE4:",
+"HOLE5:Some coins may be found in bare ground areas next to fairway",
+"HOLE6:",
+"HOLE7:",
+"HOLE8:",
+"HOLE9:",
+"HOLE10:",
+"HOLE11:",
+"HOLE12:",
+"HOLE13:",
+"HOLE14:",
+"HOLE15:",
+"HOLE16:",
+"HOLE17:",
+"HOLE18:"],
+["Imperial",
+"HOLE1:",
+"HOLE2:",
+"HOLE3:",
+"HOLE4:",
+"HOLE5:",
+"HOLE6:",
+"HOLE7:",
+"HOLE8:",
+"HOLE9:",
+"HOLE10:",
+"HOLE11:",
+"HOLE12:",
+"HOLE13:",
+"HOLE14:",
+"HOLE15:",
+"HOLE16:",
+"HOLE17:",
+"HOLE18:"],
+["Green",
+"HOLE1:",
+"HOLE2:",
+"HOLE3:",
+"HOLE4:",
+"HOLE5:",
+"HOLE6:",
+"HOLE7:",
+"HOLE8:",
+"HOLE9:Check open space behind tee",
+"HOLE10:",
+"HOLE11:",
+"HOLE12:",
+"HOLE13:",
+"HOLE14:",
+"HOLE15:",
+"HOLE16:",
+"HOLE17:",
+"HOLE18:"],
+["Balata",
+"HOLE1:",
+"HOLE2:Outer slope of hills near green next to course boundary",
+"HOLE3:",
+"HOLE4:",
+"HOLE5:",
+"HOLE6:",
+"HOLE7:",
+"HOLE8:",
+"HOLE9:",
+"HOLE10:",
+"HOLE11:",
+"HOLE12:Area behind green",
+"HOLE13:",
+"HOLE14:",
+"HOLE15:",
+"HOLE16:",
+"HOLE17:",
+"HOLE18:"],
+["NamRong",
+"HOLE1:",
+"HOLE2:",
+"HOLE3:",
+"HOLE4:Bamboo forest next to lagoon near green. Several in hill area covered with rocks.",
+"HOLE5:Check town area. One coin found overlapping rock on hillside right outside town area.",
+"HOLE6:",
+"HOLE7:",
+"HOLE8:",
+"HOLE9:",
+"HOLE10:",
+"HOLE11:",
+"HOLE12:",
+"HOLE13:",
+"HOLE14:",
+"HOLE15:",
+"HOLE16:",
+"HOLE17:",
+"HOLE18:"],
+["PineHills",
+"HOLE1:",
+"HOLE2:",
+"HOLE3:",
+"HOLE4:",
+"HOLE5:",
+"HOLE6:",
+"HOLE7:",
+"HOLE8:",
+"HOLE9:",
+"HOLE10:",
+"HOLE11:",
+"HOLE12:",
+"HOLE13:",
+"HOLE14:",
+"HOLE15:",
+"HOLE16:",
+"HOLE17:",
+"HOLE18:"],
+["Akigase",
+"HOLE1:Some items hidden in the bushes and tall grass around green",
+"HOLE2:",
+"HOLE3:",
+"HOLE4:",
+"HOLE5:",
+"HOLE6:",
+"HOLE7:",
+"HOLE8:",
+"HOLE9:",
+"HOLE10:",
+"HOLE11:",
+"HOLE12:",
+"HOLE13:",
+"HOLE14:",
+"HOLE15:",
+"HOLE16:",
+"HOLE17:",
+"HOLE18:"]
+]
+return Tips[thisCourseIndex][thisHoleNumber];
 }
 </script>
 </head>
@@ -76,61 +304,61 @@ tdIcon[i].style.backgroundImage = bgURL;
 <tr>
 <td>Eagle City Golf Course</td>
 <td class="icon"></td>
-<td class="out"></td>
-<td class="in"></td>
+<td class="out"><div class="tooltip"><span class="holenum"></span><span class="tooltiptext">Hi!<span></div></td>
+<td class="in"><div class="tooltip"><span class="holenum"></span><span class="tooltiptext">Hi!<span></div></td>
 </tr>
 <tr>
 <td>Alpina Forest Golf Club</td>
 <td class="icon"></td>
-<td class="out"></td>
-<td class="in"></td>
+<td class="out"><div class="tooltip"><span class="holenum"></span><span class="tooltiptext">Hi!<span></div></td>
+<td class="in"><div class="tooltip"><span class="holenum"></span><span class="tooltiptext">Hi!<span></div></td>
 </tr>
 <tr>
 <td>Kanaloa Beach Golf Resort</td>
 <td class="icon"></td>
-<td class="out"></td>
-<td class="in"></td>
+<td class="out"><div class="tooltip"><span class="holenum"></span><span class="tooltiptext">Hi!<span></div></td>
+<td class="in"><div class="tooltip"><span class="holenum"></span><span class="tooltiptext">Hi!<span></div></td>
 </tr>
 <tr>
 <td>Vortex Valley Golf Course</td>
 <td class="icon"></td>
-<td class="out"></td>
-<td class="in"></td>
+<td class="out"><div class="tooltip"><span class="holenum"></span><span class="tooltiptext">Hi!<span></div></td>
+<td class="in"><div class="tooltip"><span class="holenum"></span><span class="tooltiptext">Hi!<span></div></td>
 </tr>
 <tr>
 <td>Imperial Garden</td>
 <td class="icon"></td>
-<td class="out"></td>
-<td class="in"></td>
+<td class="out"><div class="tooltip"><span class="holenum"></span><span class="tooltiptext">Hi!<span></div></td>
+<td class="in"><div class="tooltip"><span class="holenum"></span><span class="tooltiptext">Hi!<span></div></td>
 </tr>
 <tr>
 <td>Green Country Club</td>
 <td class="icon"></td>
-<td class="out"></td>
-<td class="in"></td>
+<td class="out"><div class="tooltip"><span class="holenum"></span><span class="tooltiptext">Hi!<span></div></td>
+<td class="in"><div class="tooltip"><span class="holenum"></span><span class="tooltiptext">Hi!<span></div></td>
 </tr>
 <tr>
 <td>Balata Country Club</td>
 <td class="icon"></td>
-<td class="out"></td>
-<td class="in"></td>
+<td class="out"><div class="tooltip"><span class="holenum"></span><span class="tooltiptext">Hi!<span></div></td>
+<td class="in"><div class="tooltip"><span class="holenum"></span><span class="tooltiptext">Hi!<span></div></td>
 </tr>
 <tr>
 <td>Nam Rong Bay Country Club</td>
 <td class="icon"></td>
-<td class="out"></td>
-<td class="in"></td>
+<td class="out"><div class="tooltip"><span class="holenum"></span><span class="tooltiptext">Hi!<span></div></td>
+<td class="in"><div class="tooltip"><span class="holenum"></span><span class="tooltiptext">Hi!<span></div></td>
 </tr>
 <tr>
 <td>Pine Hills Golf Club</td>
 <td class="icon"></td>
-<td class="out"></td>
-<td class="in"></td>
+<td class="out"><div class="tooltip"><span class="holenum"></span><span class="tooltiptext">Hi!<span></div></td>
+<td class="in"><div class="tooltip"><span class="holenum"></span><span class="tooltiptext">Hi!<span></div></td>
 </tr>
 <tr>
 <td>Akigase Country Club</td>
 <td class="icon"></td>
-<td class="out"></td>
-<td class="in"></td>
+<td class="out"><div class="tooltip"><span class="holenum"></span><span class="tooltiptext">Hi!<span></div></td>
+<td class="in"><div class="tooltip"><span class="holenum"></span><span class="tooltiptext">Hi!<span></div></td>
 </tr>
 </table>
