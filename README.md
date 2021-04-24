@@ -9,9 +9,9 @@ Demo available <a href="https://TheFabulousPika.github.io/everybodys-golf-coins-
 
 ## Game logic
 * There are a total of ten courses available for online play, including DLC. Each course is divided into two maps that contain either the "Out" (1-9) or "In" (10-18) holes.
-Game items such as coins, gems, special golf balls, and warp medals will spawn in a certain hole's area on each map.
-* If hole number N from the "Out" map has items on a certain day, the hole number N+10 on the corresponding "In" map will also have items. If N+10 goes over 18, the excess will be carried over from 10.
+Game items such as coins, gems, special golf balls, and warp medals will spawn in the area of a certain hole (henceforth "item hole") on each map.
+* If hole N is the item hole on the "Out" map, the hole number N+10 on the corresponding "In" map will also be an item hole. If N+10 goes over 18, the count will restart from 10 with the excess being carried over.
 
-* The number of the hole with items will progress by 2 when moving down the courses in the list. When the highest hole number is reached for map type, the count will loop back to the beginning.
+* The item hole number will progress by 2 when moving down the courses in the list. If adding 2 to the previous item hole number will place the hole number over the maximum for the map type (i.e. 9 for "In" and 18 for "Out"), the count will loop back to the beginning with the excess being carried over.
 
 * The game uses Golf Island Time, which is the same as GMT. Lucky Chance is triggered at the top of the hour every two hours. The items we be reset when the day changes. The hole numbers with items will all increase by 1 on the next day.
