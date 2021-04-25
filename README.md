@@ -1,6 +1,6 @@
 # Everybody's Golf Coins and Gems Locator
 
-<img src="egbanner.jpg" />
+<img src="readme/egbanner.jpg" />
 
 ## About
 A tool for locating the holes that coins and gems appear on for each online golf course in the PS4 game <a href="https://store.playstation.com/en-us/product/UP9000-CUSA04687_00-EVERYBODYSGOLFUS" target="_blank">Everybody's Golf</a>.
@@ -14,7 +14,7 @@ Game items such as coins, gems, special golf balls, and warp medals will spawn i
 
 * If hole N is the item hole on a particular "Out" map, the hole number N+10 on the corresponding "In" map will also be an item hole. If N+10 goes over 18, the count will restart from 10 with the excess being carried over.
 
-<p align=center><img src="eglogic.png" /></p>
+<p align=center><img src="readme/eglogic.png" /></p>
 
 * The item hole number will progress by 2 when moving down the courses as they are listed on the course selection screen. If adding 2 to the previous item hole number will place the hole number over the maximum for the map type (i.e. 9 for "Out" and 18 for "In"), the count will loop back to the beginning with the excess being carried over.
 
