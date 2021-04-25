@@ -41,7 +41,6 @@ function updateGolfIslandTime(){
     var tdGolfIslandTime = document.getElementById("islandtime");
     tdGolfIslandTime.innerHTML = golfIslandTime();
 }
-}
 function golfIslandTime(){
     var golfIslandTime = new Date().toUTCString();
     return golfIslandTime;
