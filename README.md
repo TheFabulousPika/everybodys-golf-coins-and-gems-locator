@@ -23,5 +23,5 @@ Game items such as coins, gems, special golf balls, and warp medals will spawn i
 ## Limitations
 * From time to time the item hole progression logic will be disrupted by prolonged server maintenance or other factors. In such cases this tool may go out of sync with the game and will have to be resyncronized by changing the increment found on L11 of of index.js:
 ```
-var EagleOutHoleNumber = 4 + remainder;
+L11 var EagleOutHoleNumber = 4 + remainder;
 ```
