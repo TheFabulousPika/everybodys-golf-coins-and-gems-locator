@@ -19,3 +19,6 @@ Game items such as coins, gems, special golf balls, and warp medals will spawn i
 * The item hole number will progress by 2 when moving down the courses as they are listed on the course selection screen. If adding 2 to the previous item hole number will place the hole number over the maximum for the map type (i.e. 9 for "Out" and 18 for "In"), the count will loop back to the beginning with the excess being carried over.
 
 * The game keeps track of time using Golf Island Time, which is the same as GMT. Lucky Chance is triggered at the top of the hour every two hours. Upon day change, maps will be reinitialized and the item hole will move to the next hole on each map.
+
+## Limitations
+* From time to time the item hole progression logic will be disrupted by prolonged server maintenance or other factors. In such cases this tool may go out of sync with the game and will have to be resyncronized manually by changing the increment found on L of of index.js.
