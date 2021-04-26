@@ -21,4 +21,7 @@ Game items such as coins, gems, special golf balls, and warp medals will spawn i
 * The game keeps track of time using Golf Island Time, which is the same as GMT. Lucky Chance is triggered at the top of the hour every two hours. Upon day change, maps will be reinitialized and the item hole will move to the next hole on each map.
 
 ## Limitations
-* From time to time the item hole progression logic will be disrupted by prolonged server maintenance or other factors. In such cases this tool may go out of sync with the game and will have to be resyncronized manually by changing the increment found on L of of index.js.
+* From time to time the item hole progression logic will be disrupted by prolonged server maintenance or other factors. In such cases this tool may go out of sync with the game and will have to be resyncronized manually by changing the increment found on L11 of of index.js:
+```
+var EagleOutHoleNumber = 4 + remainder;
+```
