@@ -5,7 +5,7 @@
 ## About
 PS4ゲーム <a href="https://www.playstation.com/ja-jp/games/everybodys-golf/" target="_blank">NewみんなのGOLF<a>にて、オープンコース上のコインや宝石が出現しているホールを一覧表示するツールです。
 
-デモンストレーションは <a href="https://TheFabulousPika.github.io/everybodys-golf-coins-and-gems-locator/" target="_blank">こちら<a>
+動作確認は <a href="https://TheFabulousPika.github.io/everybodys-golf-coins-and-gems-locator/" target="_blank">こちら<a>
 
 ## 開発者メモ
 ### 出現法則など
