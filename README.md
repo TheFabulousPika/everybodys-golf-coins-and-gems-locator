@@ -2,7 +2,7 @@
 
 <img src="readme/egbanner.jpg" />
 
-[日本語](README.jp.md)
+[日本語で読む](README.jp.md)
 
 ## About
 A tool for locating the holes that coins and gems appear on for each online golf course in the PS4 game <a href="https://store.playstation.com/en-us/product/UP9000-CUSA04687_00-EVERYBODYSGOLFUS" target="_blank">Everybody's Golf</a>.
