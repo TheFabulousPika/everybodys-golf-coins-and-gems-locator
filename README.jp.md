@@ -2,7 +2,7 @@
 
 <img src="readme/egbanner.jpg" />
 
-[English](README.md)
+[English](README.md).
 
 ## About
 PS4ゲーム <a href="https://www.playstation.com/ja-jp/games/everybodys-golf/" target="_blank">NewみんなのGOLF<a>にて、オープンコース上のコインや宝石が出現しているホールを一覧表示するツールです。
