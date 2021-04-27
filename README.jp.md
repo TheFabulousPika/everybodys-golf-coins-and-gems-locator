@@ -1,4 +1,4 @@
-# NewみんなのGOLF アイテム所在ホール一覧ツール
+# NewみんなのGOLF アイテム所在ホール一覧表示ツール
 
 <img src="readme/egbanner.jpg" />
 
