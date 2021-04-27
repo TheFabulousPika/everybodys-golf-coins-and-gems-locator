@@ -9,7 +9,7 @@ PS4ゲーム <a href="https://www.playstation.com/ja-jp/games/everybodys-golf/" 
 
 動作確認は <a href="https://TheFabulousPika.github.io/everybodys-golf-coins-and-gems-locator/" target="_blank">こちら<a>
 
-## 開発者メモ
+## 開発メモ
 ### 出現法則など
 * オープンコースはDLCを含め10個。各コースは18ホールが前後半に分割され、アウト(1-9)とイン(10-18)の２つのマップから構成される。 各マップ上で特定のホールのエリアにコイン、宝石、ゴルフボール、ワープメダルなどのアイテムが出現する。以降、便宜的にこのホールのことを「アイテムホール」と呼ぶ。
 
