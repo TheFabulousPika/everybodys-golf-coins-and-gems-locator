@@ -21,15 +21,15 @@ function updateTable(){
     updateItemHolesInTable();
 }  
 function updateItemHolesInTable(){
-    let eagleCityOutItemHoleNumber = Number(getEagleCityOutItemHoleNumber());
+    let EagleOutHoleNumber = Number(getEagleCityOutItemHoleNumber());
     let tdOut = document.getElementsByClassName("out");
     let tdIn = document.getElementsByClassName("in");
     for (var i = 0; i < tdOut.length; i++){
-        let thisOutHoleNumber = (eagleCityOutItemHoleNumber + i*2) % 9;
+        let thisOutHoleNumber = (EagleOutHoleNumber + i*2) % 9;
         if (thisOutHoleNumber == 0){
             thisOutHoleNumber = 9;
         }
-        var thisInHoleNumber = thisOutHoleNumber + 10;
+        let thisInHoleNumber = thisOutHoleNumber + 10;
         if (thisInHoleNumber > 18){
             thisInHoleNumber = thisInHoleNumber - 9;
         }
