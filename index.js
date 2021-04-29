@@ -1,6 +1,6 @@
-//Resynchronize Here
+//Resynchronize here if tool is out of sync with actual game
 //Launch the game, get on Eagle City Out map. Take note of Item Hole number and the date in Golf Island Time
-//If hole 4 in Eagle City Out is the item hole for August 11, 2019 in Gold Island Time, the following lines should look like this:
+//If hole 4 in Eagle City Out is the item hole for August 11, 2019 in Golf Island Time, the following lines should look like this:
 //const eagleCityOutItemHoleNumOnSyncDate = 4;
 //const lastSyncDateInGolfIslandTime = new Date(Date.UTC(2019,08,11));
 //Update accordingly
