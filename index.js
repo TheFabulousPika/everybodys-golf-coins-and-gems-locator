@@ -36,7 +36,7 @@ function updateTable(){
     updateItemHolesInTable();
 } 
  
-//Start with Eagle City Out, calculate item holes based on item hole number logic outlined in README
+//Start with Eagle City Out, calculate item holes based on logic outlined in README.md
 function updateItemHolesInTable(){
     let itemHoleNumEagleCityOut = Number(getItemHoleNumEagleCityOut());
     let tdOut = document.getElementsByClassName("out");
