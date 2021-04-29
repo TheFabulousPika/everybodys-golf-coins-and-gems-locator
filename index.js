@@ -5,11 +5,11 @@ function getDaysPassed() {
     let diffDays = Math.floor(Math.abs((firstDateUTC.getTime() - currentDate.getTime())/(oneDayInMilliseconds)));
     return diffDays;
 }
-function getEagleCityOutItemHoleNumber(){
+function getItemHoleNumEagleCityOut(){
     let daysPassed = getDaysPassed();
     let remainder = daysPassed % 9;
-    let EagleOutHoleNumber = 4 + remainder;
-    return EagleOutHoleNumber;
+    let itemHoleNumEagleCityOut = 4 + remainder;
+    return itemHoleNumEagleCityOut;
 }
 function initializeTable(){
     addIconsToTable();
@@ -21,11 +21,11 @@ function updateTable(){
     updateItemHolesInTable();
 }  
 function updateItemHolesInTable(){
-    let EagleOutHoleNumber = Number(getEagleCityOutItemHoleNumber());
+    let itemHoleNumEagleCityOut = Number(getItemHoleNumEagleCityOut());
     let tdOut = document.getElementsByClassName("out");
     let tdIn = document.getElementsByClassName("in");
     for (var i = 0; i < tdOut.length; i++){
-        let thisOutHoleNumber = (EagleOutHoleNumber + i*2) % 9;
+        let thisOutHoleNumber = (itemHoleNumEagleCityOut + i*2) % 9;
         if (thisOutHoleNumber == 0){
             thisOutHoleNumber = 9;
         }
