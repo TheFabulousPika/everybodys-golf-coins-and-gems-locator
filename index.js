@@ -1,6 +1,9 @@
+const lastSyncDateInGolfIslandTime = new Date(Date.UTC(2019,08,11));
+const eagleCityOutItemHoleNumOnSyncDate = 4;
+
 function getDaysPassed() {
     const oneDayInMilliseconds = 24*60*60*1000; // hours*minutes*seconds*milliseconds
-    let firstDateUTC = new Date(Date.UTC(2019,08,11));
+    let firstDateUTC = lastSyncDateInGolfIslandTime;
     let currentDate = new Date();
     let diffDays = Math.floor(Math.abs((firstDateUTC.getTime() - currentDate.getTime())/(oneDayInMilliseconds)));
     return diffDays;
@@ -8,7 +11,8 @@ function getDaysPassed() {
 function getItemHoleNumEagleCityOut(){
     let daysPassed = getDaysPassed();
     let remainder = daysPassed % 9;
-    let itemHoleNumEagleCityOut = 4 + remainder;
+    let itemHoleNumInit = Number(eagleCityOutItemHoleNumOnSyncDate);
+    let itemHoleNumEagleCityOut = itemHoleNumInit + remainder;
     return itemHoleNumEagleCityOut;
 }
 function initializeTable(){
