@@ -22,7 +22,8 @@ PS4ゲーム <a href="https://www.playstation.com/ja-jp/games/everybodys-golf/" 
 * ゲーム内のイベントの開始終了は「みんGOL時間」の示す時刻によって管理されている。みんGOL時間はGMT（グリニッジ標準時）と同一。ラッキータイムは2時間おきに正時から開始される。みんGOL時間の日付が変わるとアイテムホールは次のホールに移動し、アイテム配置が初期化される。
 
 ### 制約事項
-* 長期サーバーメンテナンスなどで、本ツールと実際のオープンコース上のアイテムホール番号でズレが発生することを確認しています。その場合はindex.jsの11行目で下駄を履かせて調整する必要があります：
+* 長期サーバーメンテナンスなどで、本ツールと実際のオープンコース上のアイテムホール番号でズレが発生することを確認しています。その場合はindex.jsの7-8行目をイーグルシティG.C.のアイテムホール番号と、それを確認したみんGOL時間の日付で更新すればOK：
 ```
-L11 var EagleOutHoleNumber = 4 + remainder;
+L7 const eagleCityOutItemHoleNumOnSyncDate = 4;
+L8 const lastSyncDateInGolfIslandTime = new Date(Date.UTC(2019,08,11));
 ```
