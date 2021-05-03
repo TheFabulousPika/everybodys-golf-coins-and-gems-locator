@@ -1,11 +1,4 @@
-//Resynchronize here if tool is out of sync with actual game
-//Launch the game, get on Eagle City Out map. Take note of Item Hole number and the date in Golf Island Time
-//If hole 4 in Eagle City Out is the item hole for September 11, 2019 in Golf Island Time, the following lines should look like this:
-//const eagleCityOutItemHoleNumOnSyncDate = 4;
-//const lastSyncDateInGolfIslandTime = new Date(Date.UTC(2019,08,11));
-//Update accordingly
-const eagleCityOutItemHoleNumOnSyncDate = 4;
-const lastSyncDateInGolfIslandTime = new Date(Date.UTC(2021,04,02));
+const lastSyncDateInGolfIslandTime = new Date(Date.UTC(yearChecked,monthChecked-1,dateChecked));
 
 //Calculates the number of days passed since last synchronization
 function getDaysPassed() {
@@ -20,7 +13,7 @@ function getDaysPassed() {
 function getItemHoleNumEagleCityOut(){
     let daysPassed = getDaysPassed();
     let remainder = daysPassed % 9; //9 days for a full cycle
-    let itemHoleNumInit = Number(eagleCityOutItemHoleNumOnSyncDate);
+    let itemHoleNumInit = Number(eagleCityOutItemHoleNum);
     let itemHoleNumEagleCityOut = itemHoleNumInit + remainder;
     return itemHoleNumEagleCityOut;
 }
@@ -62,7 +55,7 @@ function updateGolfIslandTime(){
 
 function getGolfIslandTime(){
     let golfIslandTime = new Date().toUTCString();
-    return golfIslandTime;
+    return golfIslandTime.split("GMT")[0];
 }
 
 function addIconsToTable(){
